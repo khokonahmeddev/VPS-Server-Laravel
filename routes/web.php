@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('check', function(){
  echo phpinfo();
 });
+
+Route::get('brand/{id}', function(){
+ return "success";
+});
