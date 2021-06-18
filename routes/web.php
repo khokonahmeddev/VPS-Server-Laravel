@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('check', fn(){
-	echo phpinfo();
+Route::get('check', function(){
+ echo phpinfo();
 });
