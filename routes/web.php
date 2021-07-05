@@ -29,3 +29,8 @@ Route::get('deploy-success', function(){
 
  return "working done check";
 });
+
+Route::get('final-deploay', function(){
+
+ return "working done check";
+});
