@@ -10,10 +10,6 @@ echo "Deploying application ..."
 
     git pull origin master
 
-    # php artisan key:generate
-
-    # sudo chmod 777 storage
-
     # git reset --hard origin/master
 
     # Install dependencies based on lock file
