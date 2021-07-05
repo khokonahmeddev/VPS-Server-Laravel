@@ -8,7 +8,7 @@ echo "Deploying application ..."
 
     # Update codebase
 
-    #git pull origin master
+    git pull origin master
 
     # git reset --hard origin/master
 
