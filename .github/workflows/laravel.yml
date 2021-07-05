@@ -18,6 +18,3 @@ jobs:
   steps:
 
   - uses: actions/checkout@v2
-
-
-  - name: Compile CSS and Javascript
