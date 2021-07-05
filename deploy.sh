@@ -1,5 +1,3 @@
-#!/bin/sh
-
 set -e
 
 echo "Deploying application ..."
@@ -10,13 +8,13 @@ echo "Deploying application ..."
 
     # Update codebase
 
-    git fetch origin master
+    git pull origin master
 
-    git reset --hard origin/master
+    # git reset --hard origin/master
 
     # Install dependencies based on lock file
 
-    composer install --no-interaction --prefer-dist --optimize-autoloader
+    #composer install --no-interaction --prefer-dist --optimize-autoloader
 
     # Migrate database
 
@@ -28,11 +26,11 @@ echo "Deploying application ..."
 
     # Clear cache
 
-    php artisan optimize
+    #php artisan optimize
 
     # Reload PHP to update opcache
 
-    echo "" | sudo -S service php7.4-fpm reload
+    #echo "" | sudo -S service php7.4-fpm reload
 
 # Exit maintenance mode
 
