@@ -12,9 +12,9 @@ echo "Deploying application ..."
 
     php -r "file_exists('.env') || copy('.env.ci', '.env');"
 
-    composer install
+    # composer install
 
-    php artisan key:generate
+    # php artisan key:generate
 
 
     # git reset --hard origin/master
