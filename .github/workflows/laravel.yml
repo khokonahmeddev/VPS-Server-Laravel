@@ -34,6 +34,16 @@ jobs:
     # - name: Generate key
     #   run: php artisan key:generate
 
+    - name: Set up Node
+      uses: actions/setup-node@v1
+
+      with:
+        node-version: '12.x'
+
+      run: npm install
+      run: npm run production
+      name: Commit built assets  
+
     - name: Deploy to Server
       uses: appleboy/ssh-action@master
 
