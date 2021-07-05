@@ -36,11 +36,11 @@ jobs:
 
         git config --local user.name "khokonahmeddev"
 
-        git checkout -b master
+        git checkout -B master
 
         git add -f public/
 
-        git commit -m "Build front-end assets"
+        git commit -m "Build front-end assets done"
 
         git push -f origin master
 
