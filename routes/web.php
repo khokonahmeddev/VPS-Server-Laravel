@@ -24,3 +24,7 @@ Route::get('check', function(){
 Route::get('brand/{id}', function(){
  return "success";
 });
+
+Route::get('deploy-success', function(){
+ return "working";
+});
