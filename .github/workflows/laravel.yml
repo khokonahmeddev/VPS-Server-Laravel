@@ -1,0 +1,63 @@
+name: CD
+
+on:
+
+  push:
+
+    branches: [ master ]
+
+jobs:
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v2
+
+      with:
+
+        token: ${{ secrets.PUSH_TOKEN }}
+
+    - name: Set up Node
+
+      uses: actions/setup-node@v1
+
+      with:
+
+        node-version: '14.x'
+
+    - run: npm install
+
+    - run: npm run production
+
+    - name: Commit built assets
+
+      run: |
+
+        git config --local user.email "khokonahmed.dev@gmail.com"
+
+        git config --local user.name "khokonahmeddev"
+
+        git checkout -B master
+
+        git add -f public/
+
+        git commit -m "Build front-end assets"
+
+        git push -f origin master
+
+    - name: Deploy to production
+
+      uses: appleboy/ssh-action@master
+
+      with:
+
+        username: "obak"
+
+        host: "104.161.20.171"
+
+        password: "obak"
+
+        script: 'cd /var/www/html/VPS-Server-Laravel && ./deploy.sh'
