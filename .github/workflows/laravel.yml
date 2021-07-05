@@ -31,18 +31,8 @@ jobs:
     - name: Install Dependencies
       run: composer install      
 
-    # - name: Generate key
-    #   run: php artisan key:generate
-
-    - name: Set up Node
-      uses: actions/setup-node@v1
-
-      with:
-          node-version: '14.x'
-
-      run: |
-          npm install
-          npm run production 
+    - name: Generate key
+      run: php artisan key:generate
 
     - name: Deploy to Server
       uses: appleboy/ssh-action@master
