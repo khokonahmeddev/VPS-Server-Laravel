@@ -38,11 +38,11 @@ jobs:
       uses: actions/setup-node@v1
 
       with:
-        node-version: '12.x'
+          node-version: '14.x'
 
-      run: npm install
-      run: npm run production
-      name: Commit built assets  
+      run: |
+          npm install
+          npm run production 
 
     - name: Deploy to Server
       uses: appleboy/ssh-action@master
