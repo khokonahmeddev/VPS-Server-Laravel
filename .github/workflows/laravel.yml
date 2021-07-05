@@ -20,12 +20,12 @@ jobs:
 
       uses: appleboy/ssh-action@master
 
-      with:
+      # with:
 
-        username: "obak"
+      #   username: "obak"
 
-        host: "104.161.20.171"
+      #   host: "104.161"
 
-        password: "obak"
+      #   password: "vps password"
 
-        script: 'cd /var/www/html && ./deploy.sh'
+      #   script: 'cd /var/www/html && ./deploy.sh'
