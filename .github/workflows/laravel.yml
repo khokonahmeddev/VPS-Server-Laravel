@@ -28,7 +28,7 @@ jobs:
       run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
 
     - name: Create .test file
-      run: touch .test
+      run: rm -rf test
 
     - name: Install Dependencies
       run: composer install      
