@@ -10,6 +10,8 @@ echo "Deploying application ..."
 
     git pull origin master
 
+    git push origin master
+
     # git reset --hard origin/master
 
     # Install dependencies based on lock file
