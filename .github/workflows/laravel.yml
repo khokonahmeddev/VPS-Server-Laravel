@@ -1,46 +1,31 @@
-name: Deploy Application
+name: CD
 
 on:
+
   push:
+
     branches: [ master ]
 
-
-
-# // code from earlier is ommited for clearity
+  pull_request:
+      branches: [ master ]
 
 jobs:
-  create-deployment-artifacts:
-    name: Create deployment artifacts
+  laravel-tests:
+
     runs-on: ubuntu-latest
 
     steps:
 
-    - uses: actions/checkout@v2
-  
-    - name: Compile CSS and Javascript
+    - name: Deploy to production
 
-      run: |
-        npm install
-
-        npm run prod
-
-    - name: Configure PHP 7.4
-
-      uses: shivammathur/setup-php@master
+      uses: appleboy/ssh-action@master
 
       with:
 
-        php-version: 7.4
+        username: "obak"
 
-        extensions: mbstring, ctype, fileinfo, openssl, PDO, bcmath, json, tokenizer, xml
+        host: "104.161.20.171"
 
-    - name: Composer install
+        password: "obak"
 
-      run: |
-
-        composer install --no-dev --no-interaction --prefer-dist
-    
-
-    - name: Create deployment artifact
-
-      run: tar -czf app.tar.gz --exclude=*.git --exclude=node_modules --exclude=tests *      
+        script: 'cd /var/www/html/VPS-Server-Laravel && ./deploy.sh'
