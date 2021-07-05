@@ -8,13 +8,13 @@ echo "Deploying application ..."
 
     # Update codebase
 
-    git pull origin master
+    #git pull origin master
 
     # git reset --hard origin/master
 
     # Install dependencies based on lock file
 
-    composer install --no-interaction --prefer-dist --optimize-autoloader
+    #composer install --no-interaction --prefer-dist --optimize-autoloader
 
     # Migrate database
 
