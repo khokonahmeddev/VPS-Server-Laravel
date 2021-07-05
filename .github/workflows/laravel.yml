@@ -43,7 +43,7 @@ jobs:
         git commit -m "Commit From Deploy!"
 
         git push -f origin master
-        git reset --hard origin/master
+       
 
     - name: Deploy to production
 
