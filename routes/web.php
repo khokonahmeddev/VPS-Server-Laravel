@@ -27,6 +27,5 @@ Route::get('brand/{id}', function(){
 
 Route::get('deploy-success', function(){
 
-
  return "working done check";
 });
