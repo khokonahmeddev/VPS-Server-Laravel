@@ -1,31 +1,29 @@
-name: CD
+name: Deploy Application
 
 on:
 
   push:
 
-    branches: [ master ]
-
-  pull_request:
-      branches: [ master ]
+    branches:
+      - master
 
 jobs:
-  laravel-tests:
+  
+  create-deployment-artifacts
 
-    runs-on: ubuntu-latest
+  name: Create deplyment artifacts
 
-    steps:
+  runs-on: ubuntu-latest
 
-    - name: Deploy to production
+  steps:
 
-      uses: appleboy/ssh-action@master
+    - uses: action/checkout@v2
 
-      # with:
 
-      #   username: "obak"
+    - name: Compile CSS and Javascript
 
-      #   host: "104.161"
+    run: |
 
-      #   password: "vps password"
+      npm install
 
-      #   script: 'cd /var/www/html && ./deploy.sh'
+      npm run prod
