@@ -10,7 +10,7 @@ echo "Deploying application ..."
 
     git pull origin master
 
-    php artisan key:generate
+    # php artisan key:generate
 
     # sudo chmod 777 storage
 
