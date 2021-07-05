@@ -31,10 +31,7 @@ jobs:
     - name: Commit built assets done
 
       run: |
-        git init
-
-        git add .
-        
+       
         git config --global user.email "khokonahmed.dev@gmail.com"
 
         git config --global user.name "khokonahmeddev"
