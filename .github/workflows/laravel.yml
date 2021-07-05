@@ -20,4 +20,4 @@ jobs:
           username: "obak"
           host: "104.161.20.171"
           password: "obak"
-          script: 'cd /var/www/html/VPS-Server-Laravel && ./deploy.sh'  
+          script: 'cd DeployScripts/ && ./laravel-deploy.sh'  
