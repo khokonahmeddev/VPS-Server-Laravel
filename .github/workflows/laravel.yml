@@ -26,7 +26,7 @@ jobs:
       run: chmod -R 777 storage bootstrap/cache
 
     - name: Deploy to Server
-      uses: ngocquyhoang/deploy@laravel
+      uses: appleboy/ssh-action@master
       
       with:
           username: "obak"
