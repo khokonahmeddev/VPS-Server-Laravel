@@ -10,7 +10,8 @@ echo "Deploying application ..."
 
     git pull origin master
 
-
+    php -r "file_exists('.env') || copy('.env.ci', '.env');"
+    
     # git reset --hard origin/master
 
     # Install dependencies based on lock file
