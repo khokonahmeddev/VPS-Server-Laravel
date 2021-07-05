@@ -24,17 +24,17 @@ jobs:
       with:
           php-version: "7.4"
 
-    # - name: Create .env file
-    #   run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
+    - name: Create .env file
+      run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
 
-    # - name: Install Dependencies
-    #   run: composer install      
+    - name: Install Dependencies
+      run: composer install      
 
-    # - name: Set required directory permissions
-    #   run: chmod -R 777 storage
+    - name: Set required directory permissions
+      run: chmod -R 777 storage
 
-    # - name: Generate key
-    #   run: php artisan key:generate
+    - name: Generate key
+      run: php artisan key:generate
 
     - name: Deploy to Server
       uses: appleboy/ssh-action@master
