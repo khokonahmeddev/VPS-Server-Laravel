@@ -1,4 +1,4 @@
-name: CD
+name: Deploy to Dev
 
 on:
 
@@ -18,7 +18,13 @@ jobs:
 
     - name: Deploy to production
 
-      uses: appleboy/ssh-action@master
+      uses: actions/checkout@v2
+
+    - name: Copy .env
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+
+    - name: Generate Application Key
+      run: php artisan key:generate  
 
       with:
 
@@ -29,11 +35,5 @@ jobs:
         password: "obak"
 
         script: 'cd /var/www/html && ./deploy.sh'
-
-    - name: Copy .env
-      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-
-    - name: Generate Application Key
-      run: php artisan key:generate
 
   
