@@ -28,4 +28,4 @@ jobs:
 
         password: "obak"
 
-        script: 'cd /var/www/html/VPS-Server-Laravel && ./deploy.sh'
+        script: 'cd /var/www/html && ./deploy.sh'
