@@ -36,7 +36,6 @@ jobs:
 
     - name: Install Composer dependencies
       run: |
-          rm composer.lock
           composer install
 
     # - name: Generate Application Key
