@@ -18,13 +18,18 @@ jobs:
 
     - name: Deploy to production
 
-      uses: actions/checkout@v2
+      uses: appleboy/ssh-action@master
 
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
-    - name: Generate Application Key
-      run: php artisan key:generate  
+    - name: Install Composer dependencies
+      run: |
+          rm composer.lock
+          composer install
+
+    # - name: Generate Application Key
+    #   run: php artisan key:generate  
 
       with:
 
