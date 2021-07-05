@@ -36,7 +36,7 @@ jobs:
 
         git config --local user.name "khokonahmeddev"
 
-        git checkout -B master
+        git checkout -b master
 
         git add -f public/
 
