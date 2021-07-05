@@ -32,5 +32,5 @@ Route::get('deploy-success', function(){
 
 Route::get('final-deploay', function(){
 
- return "working done smj hhh";
+ return "working done smj hh";
 });
