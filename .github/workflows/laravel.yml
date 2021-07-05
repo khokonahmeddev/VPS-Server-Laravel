@@ -31,16 +31,19 @@ jobs:
     - name: Commit built assets done
 
       run: |
+        git init
 
-        git config --local user.email "khokonahmed.dev@gmail.com"
+        git add .
+        
+        git config --global user.email "khokonahmed.dev@gmail.com"
 
-        git config --local user.name "khokonahmeddev"
+        git config --global user.name "khokonahmeddev"
 
         git checkout -B master
 
         git add -f public/
 
-        git commit -m "Build front-end assets done"
+        git commit -m "Commit From Deploy!"
 
         git push -f origin master
 
