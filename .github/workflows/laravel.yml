@@ -25,10 +25,11 @@ jobs:
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
 
-    - name: Server deploy 
-
+    - name: Deploy to Server
+      uses: ngocquyhoang/deploy@laravel
+      
       with:
-        username: "obak"
-        host: "104.161.20.171"
-        password: "obak"
-        script: 'cd /var/www/html && ./deploy.sh'  
+          username: "obak"
+          host: "104.161.20.171"
+          password: "obak"
+          script: 'cd /var/www/html && ./deploy.sh'  
