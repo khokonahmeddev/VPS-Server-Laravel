@@ -26,6 +26,7 @@ Route::get('check', function(){
 });
 
 Route::get('brand/{id}', function(){
+    
 
  return "success";
 
