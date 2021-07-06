@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    
+
     return view('welcome');
+
 });
 
 Route::get('check', function(){
@@ -24,6 +25,7 @@ Route::get('check', function(){
 });
 
 Route::get('brand/{id}', function(){
+    
  return "success";
 
 });
