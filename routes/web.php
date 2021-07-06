@@ -14,16 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    
     return view('welcome');
 });
 
 Route::get('check', function(){
+
  echo phpinfo();
 });
 
 Route::get('brand/{id}', function(){
  return "success";
- 
+
 });
 
 Route::get('deploy-success', function(){
