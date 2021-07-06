@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('check', function(){
 
  echo phpinfo();
- 
+
 });
 
 Route::get('brand/{id}', function(){
@@ -32,6 +32,7 @@ Route::get('brand/{id}', function(){
 });
 
 Route::get('deploy-success', function(){
+
 
  return "working done check";
 
